@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ಡಿಪ್ಲೋಮಾ ಕೋರ್ಸ್‌ಗಳ ಪ್ರವೇಶಾತಿ ಅಧಿಸೂಚನೆ</title>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #ff6b35;
+            --accent-color: #2563eb;
+            --light-bg: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-light: #f9fafb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 0;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(37, 99, 235, 0.8) 100%);
+            z-index: 1;
+        }
+        
+        header h1, header p {
+            position: relative;
+            z-index: 2;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .highlight-box {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .process-steps {
+            margin: 1.5rem 0;
+        }
+        
+        .step {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 4px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: var(--accent-color);
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .documents-list {
+            list-style-type: none;
+        }
+        
+        .documents-list li {
+            padding: 0.7rem 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .documents-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: green;
+            font-weight: bold;
+        }
+        
+        .courses-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        .courses-table th, .courses-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .courses-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .courses-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .courses-table tr:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .important-dates {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        
+        .date-card {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+            padding: 15px;
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .date-card h3 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .date-card .date {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .final-note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 4px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+            
+            .important-dates {
+                flex-direction: column;
+            }
+            
+            .date-card {
+                margin: 5px 0;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+            }
+            
+            .contact-item {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ಡಿಪ್ಲೋಮಾ ಕೋರ್ಸ್‌ಗಳ ಪ್ರವೇಶಾತಿ ಅಧಿಸೂಚನೆ</h1>
+            <p>ಸಂಜಯ್ ಮೆಮೋರಿಯಲ್ ಪಾಲಿಟೆಕ್ನಿಕ್, ಇಕ್ಕೇರಿ ರಸ್ತೆ, ಸಾಗರ, ಶಿವಮೊಗ್ಗ ಜಿಲ್ಲೆ</p>
+        </header>
+        
+        <div class="highlight-box">
+            ಡಿಪ್ಲೋಮಾ ಕೋರ್ಸ್‌ಗಳಿಗೆ ಪ್ರವೇಶಾತಿ ಆರಂಭವಾಗಿದೆ - ಅರ್ಜಿ ಸಲ್ಲಿಕೆಯ ಕೊನೆಯ ದಿನಾಂಕ: 9 ಮೇ 2025
+        </div>
+        
+        <section>
+            <h2>ಪ್ರವೇಶಾತಿ ಪ್ರಕ್ರಿಯೆ</h2>
+            <p>ನಿಮ್ಮ ನೆಚ್ಚಿನ ಡಿಪ್ಲೋಮಾ ಕೋರ್ಸ್‌ಗಳಿಗೆ ಸೇರಲು ಯೋಜಿಸುತ್ತಿದ್ದರೆ, ಈ ಕೆಳಗಿನ ಸರಳ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಅನುಸರಿಸಿ:</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>ಸಂಜಯ್ ಮೆಮೋರಿಯಲ್ ಪಾಲಿಟೆಕ್ನಿಕ್ ಕಾಲೇಜಿನ ಕಚೇರಿಗೆ ಭೇಟಿ ನೀಡಿ.</strong>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>1ನೇ ವರ್ಷದ ಪ್ರವೇಶಾತಿಗಾಗಿ ಅರ್ಜಿಯನ್ನು ಕೇಳಿ.</strong> ಪ್ರವೇಶಾತಿ ಸಿಬ್ಬಂದಿ ಮತ್ತು ಉಪನ್ಯಾಸಕರು ನಿಮಗೆ ಲಭ್ಯವಿರುವ ವಿವಿಧ ಕೋರ್ಸ್‌ಗಳ ಬಗ್ಗೆ ಮಾಹಿತಿ ನೀಡುತ್ತಾರೆ ಮತ್ತು ನಿಮ್ಮ ಇಷ್ಟದ ಕೋರ್ಸ್‌ಗಳಿಗೆ ಅರ್ಜಿ ಭರ್ತಿ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತಾರೆ. ಚಿಂತಿಸಬೇಡಿ, ಅವರು ಸ್ನೇಹಪರ ಮತ್ತು ಸಹಾಯಕರಾಗಿರುತ್ತಾರೆ.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>ಎಸ್‌ಎಸ್‌ಎಲ್‌ಸಿ ಅಂಕಪಟ್ಟಿ ಮತ್ತು ಆಧಾರ್ ಕಾರ್ಡ್‌ನ ದೃಢೀಕೃತ ಪ್ರತಿಗಳೊಂದಿಗೆ ಅರ್ಜಿಯನ್ನು ಕಚೇರಿಯಲ್ಲಿ ಸಲ್ಲಿಸಿ.</strong> ಅರ್ಜಿ ಸಲ್ಲಿಸಲು ಕೊನೆಯ ದಿನಾಂಕ 9 ಮೇ 2025 ಆಗಿರುತ್ತದೆ.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>10 ಮೇ 2025 ರಂದು ಕಾಲೇಜಿಗೆ ಭೇಟಿ ನೀಡಿ.</strong> ಎಲ್ಲಾ ಅರ್ಜಿದಾರರ ಮೆರಿಟ್ ಪಟ್ಟಿಯನ್ನು ನೋಟಿಸ್ ಬೋರ್ಡ್‌ನಲ್ಲಿ ಪ್ರಕಟಿಸಲಾಗುತ್ತದೆ.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <strong>ಅದೇ ದಿನ ಶುಲ್ಕ ಪಾವತಿಸಿ ನಿಮ್ಮ ನೆಚ್ಚಿನ ಕೋರ್ಸ್‌ಗಳಿಗೆ ಪ್ರವೇಶ ಪಡೆಯಬಹುದು.</strong> ಪ್ರವೇಶ ಪಡೆಯಲು ಕೊನೆಯ ದಿನಾಂಕ 12 ಮೇ 2025 ಆಗಿರುತ್ತದೆ.
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>ಅಗತ್ಯ ದಾಖಲೆಗಳು</h2>
+            <p>ಪ್ರವೇಶಾತಿ ಪಡೆಯಲು ಹೋಗುವಾಗ ದಯವಿಟ್ಟು ಈ ಕೆಳಗಿನ ದಾಖಲೆಗಳನ್ನು ತಪ್ಪದೇ ಜೊತೆಯಲ್ಲಿ ತೆಗೆದುಕೊಂಡು ಹೋಗಿ:</p>
+            
+            <ul class="documents-list">
+                <li>SSLC ಮೂಲ ಅಂಕಪಟ್ಟಿ ಅಥವಾ ಹೈಸ್ಕೂಲ್‌ನಿಂದ ಮುಖ್ಯೋಪಾಧ್ಯಾಯರ ಸಹಿಯೊಂದಿಗೆ ದೃಢೀಕರಿಸಿದ ಪ್ರತಿ.</li>
+                <li>1 ರಿಂದ 10 ನೇ ತರಗತಿಯವರೆಗೆ ಅಥವಾ ಕನಿಷ್ಠ 5 ವರ್ಷಗಳ ವ್ಯಾಸಂಗ ಪ್ರಮಾಣಪತ್ರ (BEO ಅಧಿಕಾರಿಯ ಸಹಿಯೊಂದಿಗೆ).</li>
+                <li>ನಡತೆ ಪ್ರಮಾಣಪತ್ರ.</li>
+                <li>ವರ್ಗಾವಣೆ ಪ್ರಮಾಣಪತ್ರ.</li>
+                <li>ದೈಹಿಕ ಯೋಗ್ಯತಾ ಪ್ರಮಾಣಪತ್ರ.</li>
+                <li>ಆಧಾರ್ ಕಾರ್ಡ್ ಪ್ರತಿ.</li>
+                <li>ಜಾತಿ ಮತ್ತು ಆದಾಯ ಪ್ರಮಾಣಪತ್ರ.</li>
+                <li>05 ಪಾಸ್‌ಪೋರ್ಟ್ ಅಳತೆಯ ಫೋಟೋಗಳು.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>ಲಭ್ಯವಿರುವ ಕೋರ್ಸುಗಳು</h2>
+            <p>ಈ ಕಾಲೇಜಿನಲ್ಲಿ 05 ಡಿಪ್ಲೋಮಾ ಕೋರ್ಸುಗಳು ಲಭ್ಯವಿದೆ:</p>
+            
+            <table class="courses-table">
+                <thead>
+                    <tr>
+                        <th>ಕ್ರಮ ಸಂಖ್ಯೆ</th>
+                        <th>ಕೋರ್ಸ್ ಹೆಸರು</th>
+                        <th>ವಿಧ</th>
+                        <th>ಅಂದಾಜು ಶುಲ್ಕ (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>ಸಿವಿಲ್ ಇಂಜಿನಿಯರಿಂಗ್</td>
+                        <td>ಸಹಾಯಾನುದಾನಿತ</td>
+                        <td>12,000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>ಮೆಕ್ಯಾನಿಕಲ್ ಇಂಜಿನಿಯರಿಂಗ್</td>
+                        <td>ಸಹಾಯಾನುದಾನಿತ</td>
+                        <td>12,000</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್ & ಕಮ್ಯುನಿಕೇಷನ್ ಇಂಜಿನಿಯರಿಂಗ್</td>
+                        <td>ಸಹಾಯಾನುದಾನಿತ</td>
+                        <td>12,000</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>ಕಂಪ್ಯೂಟರ್ ಸೈನ್ಸ್</td>
+                        <td>ಸಹಾಯಾನುದಾನಿತ</td>
+                        <td>12,000</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>ಎಲೆಕ್ಟ್ರಿಕಲ್ & ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್ ಇಂಜಿನಿಯರಿಂಗ್</td>
+                        <td>ಅನನುದಾನಿತ</td>
+                        <td>18,500</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p><strong>ಗಮನಿಸಿ:</strong> ಎಲೆಕ್ಟ್ರಿಕಲ್ & ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್ ಇಂಜಿನಿಯರಿಂಗ್ ಹೊರತುಪಡಿಸಿ ಎಲ್ಲಾ ಕೋರ್ಸುಗಳು ಸಹಾಯಾನುದಾನಿತ ಕೋರ್ಸುಗಳಾಗಿವೆ.</p>
+        </section>
+        
+        <section>
+            <h2>ಮುಖ್ಯ ದಿನಾಂಕಗಳು</h2>
+            <div class="important-dates">
+                <div class="date-card">
+                    <h3>ಅರ್ಜಿ ಸಲ್ಲಿಕೆಯ ಕೊನೆಯ ದಿನಾಂಕ</h3>
+                    <p class="date">9 ಮೇ 2025</p>
+                </div>
+                
+                <div class="date-card">
+                    <h3>ಮೆರಿಟ್ ಪಟ್ಟಿ ಪ್ರಕಟಣೆ</h3>
+                    <p class="date">10 ಮೇ 2025</p>
+                </div>
+                
+                <div class="date-card">
+                    <h3>ಪ್ರವೇಶಾತಿ ಕೊನೆಯ ದಿನಾಂಕ</h3>
+                    <p class="date">12 ಮೇ 2025</p>
+                </div>
+            </div>
+            
+            <div class="final-note">
+                <p><strong>ಗಮನಿಸಿ:</strong> ಸೀಟುಗಳ ಸಂಖ್ಯೆ ಸೀಮಿತವಾಗಿದೆ, ಆದ್ದರಿಂದ ತಡಮಾಡದೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ. ನಿಮ್ಮ ಸಮಯವನ್ನು ವ್ಯರ್ಥ ಮಾಡಬೇಡಿ!</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>ಸಂಜಯ್ ಮೆಮೋರಿಯಲ್ ಪಾಲಿಟೆಕ್ನಿಕ್, ಇಕ್ಕೇರಿ ರಸ್ತೆ, ಸಾಗರ, ಶಿವಮೊಗ್ಗ ಜಿಲ್ಲೆ</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
